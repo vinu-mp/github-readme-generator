@@ -18,7 +18,7 @@ const App = () => {
             <h1>
               <Badge className="text-align-center" variant="light">
                 Markdown Previewer
-                </Badge>
+              </Badge>
             </h1>
           </div>
         </div>
@@ -28,7 +28,7 @@ const App = () => {
               <h4>
                 <Badge className="text-align-center" variant="secondary">
                   Markdown Input
-                  </Badge>
+                </Badge>
               </h4>
               <div className="mark-input inputStyle">
                 <textarea value={markdown} onChange={(event) => onChangeHandler(event)} className="input inputStyle" />
@@ -40,7 +40,7 @@ const App = () => {
               <h4>
                 <Badge className="text-align-center" variant="secondary">
                   Preview
-                  </Badge>
+                </Badge>
               </h4>
             </div>
             <div className="outputStyle" dangerouslySetInnerHTML={{ __html: marked(markdown) }}
