@@ -31,7 +31,7 @@ const App = () => {
                   </Badge>
               </h4>
               <div className="mark-input inputStyle">
-                <textarea value={markdown} onChange={(event) => onChangeHandler(event)} className="input inputStyle"/>
+                <textarea value={markdown} onChange={(event) => onChangeHandler(event)} className="input inputStyle" />
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ const App = () => {
               </h4>
             </div>
             <div className="outputStyle" dangerouslySetInnerHTML={{ __html: marked(markdown) }}
-></div>
+            ></div>
           </div>
         </div>
       </div>
