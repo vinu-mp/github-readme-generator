@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  background-color: slategray;
+  color: #000;
+}
+
+.header_logo {
+  font-size: 16px;
+  color: #fff;
+  font-family: cursive;
+}
