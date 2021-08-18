@@ -1,13 +1,9 @@
-import HOC from '../HOC/HOC';
+import styles from './Header.module.css';
 
 const Header = (props) => {
   return (
-    <header className="header">
-      <HOC>
-        <div className="header_logo">
-          Readme
-        </div>
-      </HOC>
+    <header className={styles.header}>
+      <div className={styles.header_logo}>Readme</div>
     </header>
   )
 }
