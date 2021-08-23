@@ -3,7 +3,7 @@ import MonacoEditor from "@monaco-editor/react";
 
 const Monaco = (props) => {
   return (
-    <div className={`${styles.monaco_wrapper} col-md-6 px-0 h-100`}>
+    <div className="col-md-6 px-0 h-100">
       <div className={styles.monaco_header}>
         <h6>Markdown</h6>
       </div>

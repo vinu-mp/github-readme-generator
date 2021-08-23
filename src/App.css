@@ -1,13 +1,4 @@
 .readme {
-  /* height: 1300px; */
-}
-
-.rg_container {
-  margin-top: 80px;
-  border-top: 1px solid #cbcfd4;
-}
-
-/* Footer */
-.readme_inner {
-  height: 100vh;
+  position: relative;
+  background: #ebeff3;
 }

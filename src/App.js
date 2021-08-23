@@ -1,17 +1,11 @@
 import './App.css';
-import Editor from './Components/Editor/Editor';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
+import Layout from './Components/Layout/Layout';
 
 const App = () => {
 
   return (
     <div className="readme">
-      <Header/>
-      <Editor/>
-      <footer>
-
-      </footer>
+      <Layout/>
     </div>
   )
 }
