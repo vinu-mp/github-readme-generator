@@ -8,11 +8,12 @@ const Monaco = (props) => {
         <h6>Markdown</h6>
       </div>
       <div className={styles.monaco_editor}>
+        {console.log('tet',props.initialValue)}
         <MonacoEditor
           height="90vh"
           loading='Hang on while we loads...'
           defaultLanguage="markdown"
-          // defaultValue="Hi this seems to work good"
+          defaultValue={props.initialValue}
           onChange={(value, event) => props.onChangeHandler(value, event)}
         />
       </div>

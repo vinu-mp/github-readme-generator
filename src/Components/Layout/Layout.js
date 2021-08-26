@@ -4,36 +4,27 @@ import Sidebar from '../Sidebar/Sidebar';
 import { Fragment, useState } from 'react';
 
 const Layout = () => {
-  const [isSidebarActive, setSidebarActive] = useState({
-    isActive: true,
-    value: ''
-  });
+  const [activeItem, setActiveItem] = useState('');
+  const [isSidebarActive, setSidebarActive] = useState(false);
 
   const onSideBarIconClick = (target) => {
-    setSidebarActive(prevState => {
-      if(prevState.isActive === false) {
-        prevState.isActive = true;
-        prevState.value = target;
+    setActiveItem((prevState) => {
+      if(prevState === target) {
+        prevState = ''
+        setSidebarActive(false);
       } else {
-        if(prevState.value === target) {
-          prevState.isActive = false;
-          prevState.value = '';
-        } else {
-          prevState.value = target;
-        }
+        prevState = target;
+        setSidebarActive(true);
       }
       return prevState;
     });
-    console.log(target, isSidebarActive)
   }
 
   return (
     <Fragment>
-      {console.log('inside react', isSidebarActive)}
       <Header/>
-      {isSidebarActive.isActive}
-      <Sidebar onSidebarClick={onSideBarIconClick} activeState={isSidebarActive.isActive}/>
-      <Editor activeState={isSidebarActive.isActive}/>
+      <Sidebar onSidebarClick={onSideBarIconClick} activeItem={activeItem}/>
+      <Editor activeState={isSidebarActive}/>
       {/* <div style={{width: '100%', height:'400px'}}></div> */}
     </Fragment>
   )

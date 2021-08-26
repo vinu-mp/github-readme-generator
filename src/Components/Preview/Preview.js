@@ -1,5 +1,4 @@
 import styles from './Preview.module.css';
-let marked = require("marked");
 
 const Preview = (props) => {
   return (
@@ -7,7 +6,7 @@ const Preview = (props) => {
       <div className={styles.preview_header}>
         <h6>Preview</h6>
       </div>
-      <div className={styles.preview} dangerouslySetInnerHTML={{ __html: marked(props.previewValue) }}>
+      <div className={styles.preview} dangerouslySetInnerHTML={{ __html: props.previewValue }}>
 
       </div>
     </div>
