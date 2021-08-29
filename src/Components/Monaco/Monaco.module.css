@@ -16,4 +16,6 @@
 
 .monaco_editor {
   border-right: 1px solid #cbcfd4;
+  padding-top: 15px;
+  height: calc(100% - 56px);
 }

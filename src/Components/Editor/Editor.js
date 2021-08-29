@@ -8,9 +8,9 @@ const Editor = (props) => {
   const [markdown, setMarkdown] = useState('');
   const [intial, setInitial] = useState('');
 
-  const handleEditorChange = (value, event) => {
-    console.log('on change triggered')
+  function handleEditorChange(value) {
     setMarkdown(marked(value));
+    setInitial(value);
   }
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Editor = (props) => {
   }, [])
 
   return (
-    <main className={`${styles.editor} ${props.activeState && styles.active}`}>
+    <main className={`${styles.editor} ${props.activeState ? styles.active : ''}`}>
       <div className={`${styles['editor-inner']} row m-0 w-100 h-100`}>
         <Monaco initialValue={intial} onChangeHandler={handleEditorChange} />
         <Preview previewValue={markdown} />

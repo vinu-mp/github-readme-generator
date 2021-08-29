@@ -8,13 +8,25 @@ const Monaco = (props) => {
         <h6>Markdown</h6>
       </div>
       <div className={styles.monaco_editor}>
-        {console.log('tet',props.initialValue)}
         <MonacoEditor
-          height="90vh"
-          loading='Hang on while we loads...'
+          height="100%"
+          loading='Hang on tight...'
           defaultLanguage="markdown"
-          defaultValue={props.initialValue}
-          onChange={(value, event) => props.onChangeHandler(value, event)}
+          value={props.initialValue}
+          onChange={props.onChangeHandler}
+          options={{
+            autoIndent: 'full',
+            minimap: { enabled: false },
+            wordWrap: "on",
+            formatOnType: true,
+            formatOnPaste: true,
+            smoothScrolling: true,
+            scrollBeyondLastLine: false,
+            scrollbar: {
+              verticalScrollbarSize: '5px',
+              alwaysConsumeMouseWheel: false,
+            }
+          }}
         />
       </div>
     </div>

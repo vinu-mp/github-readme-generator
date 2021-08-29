@@ -1,5 +1,6 @@
 import Editor from '../Editor/Editor';
 import Header from '../Header/Header';
+// import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
 import { Fragment, useState } from 'react';
 
@@ -8,8 +9,9 @@ const Layout = () => {
   const [isSidebarActive, setSidebarActive] = useState(false);
 
   const onSideBarIconClick = (target) => {
+
     setActiveItem((prevState) => {
-      if(prevState === target) {
+      if (prevState === target || !target) {
         prevState = ''
         setSidebarActive(false);
       } else {
@@ -22,10 +24,9 @@ const Layout = () => {
 
   return (
     <Fragment>
-      <Header/>
-      <Sidebar onSidebarClick={onSideBarIconClick} activeItem={activeItem}/>
-      <Editor activeState={isSidebarActive}/>
-      {/* <div style={{width: '100%', height:'400px'}}></div> */}
+      <Header />
+      <Sidebar onSidebarClose={onSideBarIconClick} onSidebarClick={onSideBarIconClick} activeState={isSidebarActive} activeItem={activeItem} />
+      <Editor activeState={isSidebarActive} />
     </Fragment>
   )
 }

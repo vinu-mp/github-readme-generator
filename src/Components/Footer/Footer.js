@@ -1,7 +1,9 @@
-const Footer = (props) => {
+import styles from './Footer.module.css';
+
+const Footer = () => {
   return (
 
-    <footer className="folio__footer l-container">
+    <footer className={styles.footer}>
 
       @2021 mp.prasadvinu
 
