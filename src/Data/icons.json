@@ -1,57 +1,12 @@
 {
   "Languages": [
-
-  ],
-
-  "Frontend": [
-
-  ],
-
-  "Backend": [
-
-  ],
-
-  "Mobile App": [
-
-  ],
-
-  "Database": [
-
-  ],
-
-  "Visualization": [
-
-  ],
-
-  "Devops": [
-
-  ],
-
-  "BaaS": [
-
-  ],
-
-  "Static Site Generator": [
-
-  ],
-
-  "Gaming": [
-
-  ],
-
-  "Automation": [
-
-  ],
-
-  "Tools": [
-
-  ],
-
-  "Testing": [
-
-  ],
-
-  "Others": [
-
+    {
+      "src": "../../../assets/images/languages/clojure.svg",
+      "title": "Clojure"
+    },
+    {
+      "src": "../../../assets/images/languages/clojure.svg",
+      "title": "Crystal"
+    }
   ]
 }

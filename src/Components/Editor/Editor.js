@@ -14,7 +14,7 @@ const Editor = (props) => {
   }
 
   useEffect(() => {
-    const readmePath = require("../../Data/initial.md");
+    const readmePath = require("../../data/initial.md");
     fetch(readmePath.default)
       .then(res => res.text())
       .then(res => {

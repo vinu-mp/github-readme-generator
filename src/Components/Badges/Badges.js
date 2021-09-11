@@ -1,5 +1,5 @@
 import IconWrapper from '../UI/IconWrapper/IconWrapper';
-import badgeData from '../../Data/badges.json';
+import badgeData from '../../data/badges.json';
 
 const Badges = () => {
   return (
