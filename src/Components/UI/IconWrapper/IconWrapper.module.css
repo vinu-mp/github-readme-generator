@@ -44,6 +44,13 @@
   height: calc(100% - 46px);
 }
 
+.wise_icon--tech .wise_icon img{
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  object-fit: contain;
+}
+
 .wise_icon button {
   padding: 0;
   border: 0;

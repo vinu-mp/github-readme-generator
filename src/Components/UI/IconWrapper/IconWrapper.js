@@ -3,10 +3,9 @@ import Search from '../Search/Search';
 import { useState } from 'react';
 import {debounce} from 'lodash';
 
-const photo = require('../../../assets/images/languages/clojure.svg');
-const test = (str) => {
-  console.log('test', photo, str)
-  return require(str)
+const getImageModule = (item, str) => {
+  const img = require(`../../../assets/images/${item.toLowerCase()}/${str}`);
+  return img.default;
 }
 
 const IconWrapper = (props) => {
@@ -32,8 +31,7 @@ const IconWrapper = (props) => {
         {imageData[item].map((val, index) => {
           return(
             <li key={`${val.title}_${index}`} className={styles.wise_icon} data-search-key={val.title}>
-              <img alt="edes" src={photo}></img>
-              {/* <button><img alt={val.title} src={validURL(val.src) ? val.src : test(val.src)} /></button> */}
+              <button><img alt={val.title} title={val.title} src={validURL(val.src) ? val.src : getImageModule(item, val.src)} /></button>
             </li>
           )
         })}
@@ -43,7 +41,7 @@ const IconWrapper = (props) => {
   }
 
   return (
-    <section className={styles['wise_icon-wrapper']}>
+    <section className={`${styles['wise_icon-wrapper']} ${styles[props.styleName]}`}>
       <Search onSearchHandler={debounce(searchLists)}/>
       <div className={styles['wise_icon-overfow']}>
         <div className={styles['wise_icon-scroll']}>

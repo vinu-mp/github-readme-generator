@@ -1,11 +1,11 @@
 {
   "Languages": [
     {
-      "src": "../../../assets/images/languages/clojure.svg",
+      "src": "clojure.svg",
       "title": "Clojure"
     },
     {
-      "src": "../../../assets/images/languages/clojure.svg",
+      "src": "crystal.svg",
       "title": "Crystal"
     }
   ]
