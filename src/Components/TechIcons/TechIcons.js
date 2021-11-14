@@ -3,7 +3,7 @@ import techIcons from '../../data/icons.json';
 
 const TechIcons = () => {
   return (
-    <IconWrapper styleName='wise_icon--tech' data={techIcons} />
+    <IconWrapper isIcon={true} data={techIcons} />
   )
 }
 

@@ -1,6 +1,5 @@
 import Editor from '../Editor/Editor';
 import Header from '../Header/Header';
-// import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
 import { Fragment, useState } from 'react';
 
@@ -25,8 +24,10 @@ const Layout = () => {
   return (
     <Fragment>
       <Header />
-      <Sidebar onSidebarClose={onSideBarIconClick} onSidebarClick={onSideBarIconClick} activeState={isSidebarActive} activeItem={activeItem} />
-      <Editor activeState={isSidebarActive} />
+      <section className='d-md-flex'>
+        <Sidebar onSidebarClose={onSideBarIconClick} onSidebarClick={onSideBarIconClick} activeState={isSidebarActive} activeItem={activeItem} />
+        <Editor activeState={isSidebarActive} />
+      </section>
     </Fragment>
   )
 }

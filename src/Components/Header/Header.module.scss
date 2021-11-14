@@ -1,0 +1,51 @@
+@import '../../styles/base/helpers';
+
+.header {
+  width: 100%;
+  background-color: $white;
+  color: #bfbaba;
+  box-shadow: 0 2px 7px -6px black;
+  &_logo {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &_nav {
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    border-bottom: 1px solid $grey-400;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      padding: 0px;
+      margin-left: 40px;
+    }
+  
+    &-links {
+      display: inline-block;
+      padding: 0px 15px;
+      color: #000;
+      font-size: 16px;
+      text-decoration: none;
+      line-height: 50px;
+    }
+  }
+}
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  .header {
+    &_nav {
+      margin: 0px 60px;
+    }
+  }
+}

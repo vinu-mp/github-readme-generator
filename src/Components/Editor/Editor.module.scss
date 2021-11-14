@@ -1,0 +1,25 @@
+@import '../../styles/base/helpers';
+
+.editor {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: calc(100vh - 50px);
+  transition: transform .2s ease-in;
+
+  &.active {
+    transform: translateX(300px);
+  }
+
+  &-inner {
+    background: #fff;
+    border-radius: 4px;
+  }
+}
+
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  .editor {
+  }
+}

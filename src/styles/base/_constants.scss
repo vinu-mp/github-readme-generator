@@ -1,0 +1,124 @@
+//--------------
+// Fonts Weights
+//--------------
+$font-weight-boldest: 900 !default;
+$font-weight-bold: 700 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-normal: 400 !default;
+$font-weight-thin: 300 !default;
+$font-weight-base: $font-weight-normal !default;
+
+//--------------
+// Typography
+//--------------
+$font-size-initial: 16px;
+$font-size-base: 1rem !default;
+$font-size-xl: 1.5rem !default;
+$font-size-lg: 1.25rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-mini: 0.75rem !default;
+
+//--------------
+// Color system
+//--------------
+$white: #ffffff !default;
+$black: #000000 !default;
+$grey-400: #ebe8e8 !default;
+$grey-200: #cbcfd4 !default;
+
+//--------------
+// Z-Index Scale
+//--------------
+$z-n20: -20;
+$z-n10: -10;
+$z-0: 0;
+$z-10: 10;
+$z-20: 20;
+$z-30: 30;
+$z-90: 90; // Reserved for overlays
+
+$spacer: 0.5rem;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.125
+  ),
+  2: (
+    $spacer * 0.25
+  ),
+  4: (
+    $spacer * 0.5
+  ),
+  8: (
+    $spacer * 1
+  ),
+  12: (
+    $spacer * 1.5
+  ),
+  16: (
+    $spacer * 2
+  ),
+  18: (
+    $spacer * 2.25
+  ),
+  20: (
+    $spacer * 2.5
+  ),
+  22: (
+    $spacer * 2.75
+  ),
+  24: (
+    $spacer * 3
+  ),
+  32: (
+    $spacer * 4
+  ),
+  40: (
+    $spacer * 5
+  ),
+  80: (
+    $spacer * 10
+  )
+);
+
+//----------------
+// Font utility
+// Description: .fs-14 will set 0.875rem as font size to the element.
+//----------------
+$font-sizes: (
+  0: 0,
+  11: 0.6875rem,
+  10: 0.625rem,
+  12: 0.75rem,
+  14: 0.875rem,
+  16: 1rem,
+  18: 1.125rem,
+  20: 1.25rem,
+  22: 1.375rem,
+  24: 1.5rem,
+  32: 2rem,
+  36: 2.25rem,
+  40: 2.5rem,
+  42: 2.625rem,
+  44: 2.75rem,
+  52: 3.25rem,
+  60: 3.75rem,
+  48: 3rem,
+  56: 3.5rem,
+  68: 4.25rem
+);
+
+// Font Weights
+$font-weights: 700, 600, 500, 400;
+
+
+// Variables
+$secondary-menu-height: 48px;
+$primary-menu-height: 50px;
+$sidebar-md-width: 50px;
+
+:root {
+  --secondary-menu-height: #{$secondary-menu-height};
+  --primary-menu-height: #{$primary-menu-height};
+  --sidebar-md-width: #{$sidebar-md-width};
+}
