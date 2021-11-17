@@ -97,7 +97,8 @@
       position: relative;
       justify-content: center;
       padding: 16px;
-  
+      cursor: pointer;
+
       &.active {
         position: relative;
 
@@ -109,13 +110,6 @@
           border-bottom: 2px solid $black;
         }
       }
-      // &.hover {
-      //   color: black;
-      // }
-  
-      // &:not(.active):hover .icon_tooltip {
-      //   display: block;
-      // }
     }
   }
 
@@ -167,12 +161,6 @@
           transform: translateX(var(--sidebar-md-width));
         }
       }
-
-      // &-contents {
-      //   &.active {
-      //     transform: translateX(var(--sidebar-md-width));
-      //   }
-      // }
     }
 
     &_icon {
