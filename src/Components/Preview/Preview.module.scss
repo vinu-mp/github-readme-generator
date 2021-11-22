@@ -1,8 +1,9 @@
+@import "../../styles/base/helpers";
 
 .preview {
   padding: 15px 15px 15px 20px;
   overflow-y: scroll;
-  height: calc(100% - 56px);
+  height: calc(100% - (41px + 67px + 20px));
 
   &_header {
     border-bottom: 1px solid #cbcfd4;
@@ -14,7 +15,7 @@
     h6 {
       display: inline-block;
       line-height: 40px;
-      color: grey;
+      color: $grey-400;
       margin: 0;
     }
 

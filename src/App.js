@@ -1,13 +1,21 @@
-import './App.css';
-import './styles/app.scss';
-import Layout from './Components/Layout/Layout';
+import "./styles/app.scss";
+import React from "react";
+import Header from "./Components/Header/Header";
+import EditorHome from "./Pages/EditorHome/EditorHome";
+import About from "./Pages/About/About";
+import Footer from "./Components/Footer/Footer";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
-
   return (
-    <div className="readme">
-      <Layout/>
-    </div>
-  )
-}
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<EditorHome />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+};
 export default App;

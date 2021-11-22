@@ -1,25 +1,52 @@
-@import '../../styles/base/helpers';
+@import "../../styles/base/helpers";
 
-.editor {
+.ws_editor {
   position: relative;
-  padding: 10px;
   width: 100%;
-  height: calc(100vh - 50px);
-  transition: transform .2s ease-in;
+  top: var(--secondary-menu-height);
+  height: calc(100% - var(--secondary-menu-height));
+  transition: transform 0.2s ease-in;
 
   &.active {
-    transform: translateX(300px);
+    transform: translateX(var(--sidebar-md-width));
   }
 
-  &-inner {
-    background: #fff;
-    border-radius: 4px;
+  .doc_info {
+    padding: 16px;
+    display: inline-flex;
+
+    input {
+      border: 0;
+      border-bottom: 1px solid $black;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    background-color: $white;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__inner {
+    border-top: 1px solid $grey-200;
   }
 }
 
-
-// Override for tablets and desktop
 @include media-breakpoint-up(md) {
-  .editor {
+  .ws_editor {
+    padding: 10px 10px 10px 58px;
+    top: 0;
+    height: 100%;
+    &.active {
+      transform: translateX(calc(var(--sidebar-md-width) + 10px));
+    }
+
+    .doc_info {
+      padding: 20px 16px;
+    }
   }
 }

@@ -23,8 +23,9 @@ $font-size-mini: 0.75rem !default;
 //--------------
 $white: #ffffff !default;
 $black: #000000 !default;
-$grey-400: #ebe8e8 !default;
-$grey-200: #cbcfd4 !default;
+
+$grey-200: #ebe8e8 !default;
+$grey-400: #cbcfd4 !default;
 
 //--------------
 // Z-Index Scale
@@ -41,44 +42,44 @@ $spacer: 0.5rem;
 $spacers: (
   0: 0,
   1: (
-    $spacer * 0.125
+    $spacer * 0.125,
   ),
   2: (
-    $spacer * 0.25
+    $spacer * 0.25,
   ),
   4: (
-    $spacer * 0.5
+    $spacer * 0.5,
   ),
   8: (
-    $spacer * 1
+    $spacer * 1,
   ),
   12: (
-    $spacer * 1.5
+    $spacer * 1.5,
   ),
   16: (
-    $spacer * 2
+    $spacer * 2,
   ),
   18: (
-    $spacer * 2.25
+    $spacer * 2.25,
   ),
   20: (
-    $spacer * 2.5
+    $spacer * 2.5,
   ),
   22: (
-    $spacer * 2.75
+    $spacer * 2.75,
   ),
   24: (
-    $spacer * 3
+    $spacer * 3,
   ),
   32: (
-    $spacer * 4
+    $spacer * 4,
   ),
   40: (
-    $spacer * 5
+    $spacer * 5,
   ),
   80: (
-    $spacer * 10
-  )
+    $spacer * 10,
+  ),
 );
 
 //----------------
@@ -105,20 +106,23 @@ $font-sizes: (
   60: 3.75rem,
   48: 3rem,
   56: 3.5rem,
-  68: 4.25rem
+  68: 4.25rem,
 );
 
 // Font Weights
 $font-weights: 700, 600, 500, 400;
 
-
 // Variables
-$secondary-menu-height: 48px;
-$primary-menu-height: 50px;
-$sidebar-md-width: 50px;
+// $secondary-menu-height: 48px;
+// $primary-menu-height: 50px;
+// $sidebar-md-width: 50px;
+// $page-spacing: 16px;
+// $page-md-spacing: 60px;
 
 :root {
-  --secondary-menu-height: #{$secondary-menu-height};
-  --primary-menu-height: #{$primary-menu-height};
-  --sidebar-md-width: #{$sidebar-md-width};
+  --secondary-menu-height: 48px;
+  --primary-menu-height: 48px;
+  --sidebar-width: 48px;
+  --sidebar-md-width: 300px;
+  --page-spacing: 16px;
 }

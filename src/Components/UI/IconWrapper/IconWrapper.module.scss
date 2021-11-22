@@ -1,4 +1,4 @@
-@import '../../../styles/base/helpers';
+@import "../../../styles/base/helpers";
 
 .section_title {
   margin: 10px 0px 20px;
@@ -47,19 +47,19 @@
 }
 
 .wise_icon {
-
   button {
     padding: 0;
     border: 0;
     margin: 7px;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     &:hover {
       transform: scale(1.1);
     }
 
     &.flash {
+      z-index: $z-30;
       &::after {
-        content: 'copied';
+        content: "copied";
         position: absolute;
         top: 0;
         right: 0;
@@ -78,15 +78,15 @@
           top: 0px;
         }
         25% {
-          opacity: .7;
+          opacity: 0.7;
           top: -10px;
         }
         50% {
-          opacity: .5;
+          opacity: 0.5;
           top: -15px;
         }
         75% {
-          opacity: .3;
+          opacity: 0.3;
           top: -20px;
         }
         100% {

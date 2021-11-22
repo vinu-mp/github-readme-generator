@@ -1,8 +1,7 @@
-@import '../../styles/base/helpers';
+@import "../../styles/base/helpers";
 
 .monaco_header {
-  border-bottom: 1px solid $grey-200;
-  border-right: 1px solid $grey-200;
+  border-bottom: 1px solid $grey-400;
   padding: 0px 16px;
   display: flex;
   align-items: center;
@@ -11,7 +10,7 @@
   h6 {
     display: inline-block;
     line-height: 40px;
-    color: grey;
+    color: $grey-400;
     margin: 0;
   }
 
@@ -23,7 +22,14 @@
   }
 }
 
-.monaco_editor {
-  height: calc(100% - 56px);
-  border-right: 1px solid $grey-200;
+.monaco_inner {
+  height: calc(100% - (41px + 67px));
+}
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  .monaco_inner,
+  .monaco_header {
+    border-right: 1px solid $grey-200;
+  }
 }
