@@ -9,6 +9,7 @@ const Editor = (props) => {
   const [markdown, setMarkdown] = useState("");
   const [intial, setInitial] = useState("");
   const [editorActive, setEditorActive] = useState(true);
+  const [docName, setDocName] = useState("Profile_readme.md");
 
   function handleEditorChange(value) {
     setMarkdown(marked(value));
@@ -37,8 +38,16 @@ const Editor = (props) => {
       }`}
     >
       <div className={styles.ws_editor__wrapper}>
-        <div className={styles.doc_info}>
-          <input type="text" value="" placeholder="Document name" />
+        <div className={styles.ws_editor__item}>
+          <input
+            type="text"
+            value={docName}
+            required
+            onChange={(e) => setDocName(e.target.value)}
+          />
+          <label className={`form-label`} htmlFor="color">
+            Document name
+          </label>
         </div>
         <div className={`${styles.ws_editor__inner} row m-0 w-100 h-100`}>
           <Monaco

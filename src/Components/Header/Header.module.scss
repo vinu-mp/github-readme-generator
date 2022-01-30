@@ -67,6 +67,7 @@
   }
 
   &__nav {
+    $this: &;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,15 +84,40 @@
       height: 100vh;
       opacity: 0;
       transition: all 0.4s ease;
+
       &__item {
+        position: relative;
         padding: 0px 16px;
+        border-bottom: 1px solid $black-dim;
+        color: $white;
+        overflow: hidden;
+        &.active {
+          #{$this}_dd {
+            max-height: 500px;
+            height: 100%;
+          }
+        }
       }
 
       &__link {
-        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
         line-height: 48px;
-        color: $white;
+        font-weight: 500;
+        color: inherit;
         text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          color: inherit;
+        }
+      }
+
+      .nav_icon {
+        margin-left: 4px;
+        transition: transform 0.2s ease;
       }
 
       &.active {
@@ -101,40 +127,22 @@
     }
 
     &_dd {
-      display: none;
+      max-height: 0;
+      height: 100%;
+      transition: max-height 0.4s ease;
+      &__item {
+        line-height: 48px;
+        cursor: pointer;
+      }
     }
   }
-  // &__nav {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: space-between;
-  //   height: 48px;
-  //   padding: 0px 16px;
-  //   border-bottom: 1px solid $grey-400;
-
-  //   ul {
-  //     display: flex;
-  //     justify-content: flex-end;
-  //     list-style-type: none;
-  //     padding: 0px;
-  //     margin-left: 40px;
-  //   }
-
-  //   &-links {
-  //     display: inline-block;
-  //     padding: 0px 15px;
-  //     color: #000;
-  //     font-size: 16px;
-  //     text-decoration: none;
-  //     line-height: 50px;
-  //   }
-  // }
 }
 
 // Override for tablets and desktop
 @include media-breakpoint-up(md) {
   .header {
     &__nav {
+      $this: &;
       margin: 0px 60px;
       padding: 0px;
       border: 0;
@@ -145,8 +153,34 @@
         opacity: 1;
         background: $white;
         transition: none;
-        &__link {
+
+        &__item {
+          border: 0;
           color: $black;
+          overflow: unset;
+          &:hover {
+            background: $grey-200;
+            #{$this}_dd {
+              display: block;
+            }
+            .nav_icon {
+              transform: rotateZ(180deg);
+            }
+          }
+        }
+      }
+
+      &_dd {
+        position: absolute;
+        width: 150%;
+        right: 0;
+        display: none;
+        max-height: fit-content;
+        height: auto;
+        background: $grey-200;
+
+        &__item {
+          padding: 12px;
         }
       }
     }

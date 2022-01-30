@@ -11,9 +11,11 @@
     transform: translateX(var(--sidebar-md-width));
   }
 
-  .doc_info {
+  &__item {
+    position: relative;
     padding: 16px;
     display: inline-flex;
+    align-items: center;
 
     input {
       border: 0;
@@ -21,6 +23,22 @@
 
       &:focus {
         outline: none;
+      }
+
+      &:focus,
+      &:valid {
+        ~ label {
+          font-size: 12px;
+          transform: translateY(-20px);
+        }
+      }
+      + label {
+        position: absolute;
+        margin: 0;
+        color: $grey-500;
+        transform: translateY(0px);
+        transition: all 0.2s ease;
+        pointer-events: none;
       }
     }
   }
