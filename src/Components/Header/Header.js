@@ -1,12 +1,40 @@
 import styles from "./Header.module.scss";
-import Logo from "../../assets/images/w-edit-logo.png";
-import { useState } from "react";
+import Logo from "../../assets/images/g-edit-logo.png";
+import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import EditorContext from "../../store/editor-context";
+
+let marked = require("marked");
 
 const Header = () => {
+  const editorContext = useContext(EditorContext);
+
   const [isBurgerMenuActive, setBurgerMenuActive] = useState(false);
   const [activeDropDown, setActiveDropDown] = useState(null);
+
+  const saveFile = (key, event) => {
+    event.stopPropagation();
+    let data = "",
+      extension = "html";
+
+    if (key === "HTML") {
+      data = marked(editorContext.markDownData);
+    } else {
+      extension = "md";
+      data = editorContext.markDownData;
+    }
+
+    var htmlContent = [data];
+    var bl = new Blob(htmlContent, { type: "text/html" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(bl);
+    a.download = `${editorContext.fileName}.${extension}`;
+    a.hidden = true;
+    document.body.appendChild(a);
+    a.innerHTML = "something random";
+    a.click();
+  };
 
   const dropDownClickHandler = (event) => {
     if (activeDropDown && activeDropDown !== event.currentTarget) {
@@ -22,27 +50,18 @@ const Header = () => {
 
   const NavItems = [
     {
-      key: "ABOUT",
-      type: "Link",
-      redirect: "/about",
-    },
-    {
-      key: "PREVIEW AS",
-      type: "dropdown",
-      children: [
-        {
-          key: "HTML",
-          type: "inpage",
-        },
-      ],
-    },
-    {
       key: "TOOLS",
       type: "Link",
-      redirect: "/tools",
+      redirect: "https://github.com/dhyeythumar/awesome-readme-tools",
     },
     {
-      key: "DOWNLOAD AS",
+      key: "Samples",
+      type: "Link",
+      redirect:
+        "https://github.com/durgeshsamariya/awesome-github-profile-readme-templates/tree/master/templates",
+    },
+    {
+      key: "SAVE AS",
       type: "dropdown",
       children: [
         {
@@ -66,13 +85,17 @@ const Header = () => {
       >
         <div className={`${styles.header__nav_menu__link} c-pointer`}>
           {item.key}
-          <MdKeyboardArrowDown className={styles.nav_icon} />
+          <MdKeyboardArrowDown className={styles.down_caret} />
         </div>
         <ul className={`${styles.header__nav_dd}`}>
           {item.children.map((elem) => {
             if (elem.type === "inpage") {
               return (
-                <li key={elem.key} className={styles.header__nav_dd__item}>
+                <li
+                  key={elem.key}
+                  onClick={(event) => saveFile(elem.key, event)}
+                  className={styles.header__nav_dd__item}
+                >
                   {elem.key}
                 </li>
               );
@@ -98,7 +121,12 @@ const Header = () => {
     return (
       <li key={item.key} className={styles.header__nav_menu__item}>
         {item.type.toLowerCase() === "link" ? (
-          <Link to={item.redirect} className={styles.header__nav_menu__link}>
+          <Link
+            to={item.redirect}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.header__nav_menu__link}
+          >
             {item.key}
           </Link>
         ) : (

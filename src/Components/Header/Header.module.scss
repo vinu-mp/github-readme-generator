@@ -10,7 +10,8 @@
   z-index: $z-30;
 
   &__logo {
-    width: 125px;
+    width: 180px;
+    height: 60px;
     display: flex;
     justify-content: center;
 
@@ -71,19 +72,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    height: var(--secondary-menu-height);
     padding: 0px 16px;
     border-bottom: 1px solid $grey-200;
 
     &_menu {
       position: absolute;
       left: -100%;
-      color: $white;
+      color: $black;
       background: $black;
       top: var(--primary-menu-height);
       height: 100vh;
       opacity: 0;
-      transition: all 0.4s ease;
+      transition: all 0.2s ease;
 
       &__item {
         position: relative;
@@ -95,6 +96,10 @@
           #{$this}_dd {
             max-height: 500px;
             height: 100%;
+          }
+
+          .down_caret {
+            transform: rotateZ(180deg);
           }
         }
       }
@@ -115,14 +120,14 @@
         }
       }
 
-      .nav_icon {
+      .down_caret {
         margin-left: 4px;
         transition: transform 0.2s ease;
       }
 
       &.active {
         left: 0;
-        opacity: 1;
+        opacity: 0.9;
       }
     }
 
@@ -131,7 +136,7 @@
       height: 100%;
       transition: max-height 0.4s ease;
       &__item {
-        line-height: 48px;
+        padding: 12px;
         cursor: pointer;
       }
     }
@@ -158,12 +163,21 @@
           border: 0;
           color: $black;
           overflow: unset;
+
+          &.active {
+            #{$this}_dd {
+              max-height: auto;
+              height: auto;
+            }
+          }
+
           &:hover {
             background: $grey-200;
+
             #{$this}_dd {
               display: block;
             }
-            .nav_icon {
+            .down_caret {
               transform: rotateZ(180deg);
             }
           }
@@ -174,13 +188,17 @@
         position: absolute;
         width: 150%;
         right: 0;
+        padding: 8px;
         display: none;
         max-height: fit-content;
         height: auto;
-        background: $grey-200;
-
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+        background: $white;
+        color: $black;
         &__item {
-          padding: 12px;
+          &:hover {
+            background-color: $grey-200;
+          }
         }
       }
     }

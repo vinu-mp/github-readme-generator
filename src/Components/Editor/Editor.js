@@ -1,19 +1,20 @@
 import Monaco from "../Monaco/Monaco";
 import Preview from "../Preview/Preview";
 import styles from "./Editor.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import EditorContext from "../../store/editor-context";
 
 let marked = require("marked");
 
 const Editor = (props) => {
+  const editorContext = useContext(EditorContext);
+
   const [markdown, setMarkdown] = useState("");
-  const [intial, setInitial] = useState("");
   const [editorActive, setEditorActive] = useState(true);
-  const [docName, setDocName] = useState("Profile_readme.md");
 
   function handleEditorChange(value) {
     setMarkdown(marked(value));
-    setInitial(value);
+    editorContext.setMarkDownData(value);
   }
 
   const setActiveView = (view) => {
@@ -21,15 +22,8 @@ const Editor = (props) => {
   };
 
   useEffect(() => {
-    const readmePath = require("../../data/initial.md");
-    fetch(readmePath.default)
-      .then((res) => res.text())
-      .then((res) => {
-        setInitial(res);
-        setMarkdown(marked(res));
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    setMarkdown(marked(editorContext.markDownData));
+  }, [editorContext.markDownData]);
 
   return (
     <main
@@ -41,9 +35,9 @@ const Editor = (props) => {
         <div className={styles.ws_editor__item}>
           <input
             type="text"
-            value={docName}
+            value={editorContext.fileName}
             required
-            onChange={(e) => setDocName(e.target.value)}
+            onChange={(e) => editorContext.setFileName(e.target.value)}
           />
           <label className={`form-label`} htmlFor="color">
             Document name
@@ -53,7 +47,7 @@ const Editor = (props) => {
           <Monaco
             classSet={`${editorActive ? "d-block" : "d-none"} d-md-block`}
             setActiveView={setActiveView}
-            initialValue={intial}
+            initialValue={editorContext.markDownData}
             onChangeHandler={handleEditorChange}
           />
           <Preview
