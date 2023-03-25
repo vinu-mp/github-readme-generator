@@ -1,0 +1,70 @@
+@import "../../styles/base/helpers";
+
+.ws_editor {
+  position: relative;
+  width: 100%;
+  top: var(--secondary-menu-height);
+  height: calc(100% - var(--secondary-menu-height));
+  transition: transform 0.2s ease-in;
+
+  &.active {
+    transform: translateX(var(--sidebar-md-width));
+  }
+
+  &__item {
+    position: relative;
+    padding: 24px 16px 16px;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+      border: 0;
+      border-bottom: 1px solid $black;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus,
+      &:valid {
+        ~ label {
+          font-size: 12px;
+          transform: translateY(-20px);
+        }
+      }
+      + label {
+        position: absolute;
+        margin: 0;
+        color: $grey-500;
+        transform: translateY(0px);
+        transition: all 0.2s ease;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    background-color: $white;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__inner {
+    border-top: 1px solid $grey-200;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .ws_editor {
+    padding: 10px 10px 10px 58px;
+    top: 0;
+    height: 100%;
+    &.active {
+      transform: translateX(calc(var(--sidebar-md-width) + 10px));
+    }
+
+    .doc_info {
+      padding: 20px 16px;
+    }
+  }
+}

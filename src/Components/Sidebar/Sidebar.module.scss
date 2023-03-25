@@ -1,0 +1,180 @@
+@import "../../styles/base/helpers";
+
+.sidebar {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  z-index: $z-10;
+
+  &_logo {
+    display: flex;
+    justify-content: center;
+    padding: 18px 6px;
+    color: $white;
+    font-size: 18px;
+    font-family: cursive;
+    line-height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &_nav {
+    background: $white;
+    width: 100%;
+    z-index: 9;
+
+    &-list {
+      ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0px 16px;
+        margin: 0;
+        border-bottom: 1px solid $grey-200;
+      }
+    }
+
+    &-contents {
+      position: absolute;
+      width: 300px;
+      top: var(--secondary-menu-height);
+      bottom: 0px;
+      height: calc(
+        100vh - ((var(--secondary-menu-height) + var(--primary-menu-height)))
+      );
+      background: $white;
+      margin: 0px;
+      border-right: 1px solid $grey-200;
+      transform: translateX(-300px);
+      transition: transform 0.2s ease-in;
+
+      &.active {
+        transform: translateX(0px);
+      }
+    }
+
+    &-outer {
+      position: absolute;
+      height: calc(100% - 53px);
+      opacity: 0;
+      overflow: hidden;
+      transition: opacity 0.15s ease-in;
+
+      &.active {
+        width: 100%;
+        opacity: 1;
+        z-index: 9;
+      }
+    }
+
+    &-title {
+      margin-bottom: 0px;
+      font-size: 18px;
+    }
+
+    &-close {
+      display: flex;
+      color: $black;
+      cursor: pointer;
+      z-index: 99;
+
+      &:hover {
+        color: #848080;
+      }
+    }
+  }
+
+  &_icon {
+    &-wrapper {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      margin: 10px;
+      align-items: center;
+      cursor: pointer;
+
+      &.active {
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+
+  .icon_tooltip {
+    position: absolute;
+    display: none;
+    width: max-content;
+    top: 2px;
+    left: 34px;
+    background: $black;
+    color: $white;
+    z-index: $z-30;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right: 4px solid $black;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+    }
+  }
+}
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  .sidebar {
+    height: 100%;
+    width: auto;
+    &_nav {
+      width: 48px;
+
+      &-list {
+        ul {
+          flex-direction: column;
+          margin: 80px 0px 0px;
+          border: 0;
+          padding: 0;
+        }
+      }
+
+      &-contents {
+        top: 10px;
+        border: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: calc(100vh - (var(--primary-menu-height) + 20px));
+        &.active {
+          transform: translateX(calc(var(--sidebar-width) + 10px));
+        }
+      }
+    }
+
+    &_icon {
+      &-wrapper {
+        width: 30px;
+        height: 30px;
+        &:hover:not(.active) {
+          background: $grey-200;
+
+          .icon_tooltip {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

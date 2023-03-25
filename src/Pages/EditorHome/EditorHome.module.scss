@@ -1,0 +1,16 @@
+@import "../../styles/base/helpers";
+
+.ws_layout_wrapper {
+  background: $grey-200;
+  height: calc(100vh - var(--primary-menu-height));
+  margin-top: var(--primary-menu-height);
+  overflow: hidden;
+}
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  // .ws_layout_wrapper {
+  //   height: calc(100vh - var(--primary-menu-height));
+  //   margin-top: var(--primary-menu-height);
+  // }
+}

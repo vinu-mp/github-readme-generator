@@ -1,0 +1,99 @@
+@import "../../../styles/base/helpers";
+
+.section_title {
+  margin: 10px 0px 20px;
+}
+
+.wise_icon-wrapper {
+  padding: 0px 15px;
+  height: 100%;
+}
+
+.wise_icon_group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wise_icon_group:empty {
+  display: none;
+}
+
+.wise_icon_group::before {
+  content: attr(data-display-name);
+  color: #aaa;
+  font-size: 14px;
+  position: sticky;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  text-transform: uppercase;
+  line-height: 45px;
+  font-weight: 700;
+}
+
+.wise_icon-scroll {
+  overflow-y: scroll;
+  position: relative;
+  height: 100%;
+}
+
+.wise_icon-overfow {
+  overflow: hidden;
+  height: calc(100% - (var(--primary-menu-height) + 20px));
+}
+
+.wise_icon {
+  button {
+    padding: 0;
+    border: 0;
+    margin: 7px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.flash {
+      z-index: $z-30;
+      &::after {
+        content: "copied";
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 8px;
+        background: #000;
+        color: #fff;
+        padding: 3px;
+        border-radius: 4px;
+        z-index: $z-30;
+        animation: movetop 0.5s;
+      }
+
+      @keyframes movetop {
+        0% {
+          opacity: 1;
+          top: 0px;
+        }
+        25% {
+          opacity: 0.7;
+          top: -10px;
+        }
+        50% {
+          opacity: 0.5;
+          top: -15px;
+        }
+        75% {
+          opacity: 0.3;
+          top: -20px;
+        }
+        100% {
+          opacity: 0;
+          top: -25px;
+        }
+      }
+    }
+  }
+}

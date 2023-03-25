@@ -1,0 +1,35 @@
+@import "../../styles/base/helpers";
+
+.monaco_header {
+  border-bottom: 1px solid $grey-400;
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h6 {
+    display: inline-block;
+    line-height: 40px;
+    color: $grey-400;
+    margin: 0;
+  }
+
+  &-icon {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+.monaco_inner {
+  height: calc(100% - (41px + 67px));
+}
+
+// Override for tablets and desktop
+@include media-breakpoint-up(md) {
+  .monaco_inner,
+  .monaco_header {
+    border-right: 1px solid $grey-200;
+  }
+}
