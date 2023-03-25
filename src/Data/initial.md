@@ -1,19 +1,19 @@
 <img align="right" alt="GIF" src="https://c.tenor.com/NOYF3f82b_gAAAAM/programmer.gifgit a" width="400" height="320"/>
 
-## Hola, <br><br> &nbsp;&nbsp;&nbsp; John Doe here 👋
+## Hola, <br> &nbsp;&nbsp;&nbsp; John Doe here 👋
 
 <br>
 
 ### Frontend Dev | Time and Money Investor
 
-&nbsp;&nbsp;&nbsp;💻&nbsp;&nbsp;Currently exploring ember js<br>
+&nbsp;&nbsp;&nbsp;💻&nbsp;&nbsp;Currently exploring React js<br>
 &nbsp;&nbsp;&nbsp;📖&nbsp;&nbsp;Spending time on DSA<br>
 
 <br>
 
 ### Goals
 
-&nbsp;&nbsp;&nbsp;🌰&nbsp;&nbsp;2️⃣0️⃣2️⃣2️⃣ Build a small parallel coding platform<br>
+&nbsp;&nbsp;&nbsp;🌰&nbsp;&nbsp;2️⃣0️⃣2️⃣2️⃣ Eat ➡️ sleep ➡️ code ➡️ repeat<br>
 &nbsp;&nbsp;&nbsp;🌱&nbsp;&nbsp;2️⃣0️⃣2️⃣4️⃣ Build a product, take it to market and obviously succeed<br>
 &nbsp;&nbsp;&nbsp;🌴&nbsp;&nbsp;2️⃣0️⃣3️⃣5️⃣ Retire and travel :trollface:
 
