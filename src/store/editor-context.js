@@ -11,7 +11,7 @@ const EditorContextProvider = ({ children }) => {
   const [fileName, setFileName] = useState("profile_readme");
 
   useEffect(() => {
-    const readmePath = require("../data/initial.md");
+    const readmePath = require("../Data/initial.md");
     fetch(readmePath.default)
       .then((res) => res.text())
       .then((res) => {
