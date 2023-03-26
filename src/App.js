@@ -1,8 +1,8 @@
 import "./styles/app.scss";
 import React from "react";
-import Header from "./Components/Header/Header";
-import EditorHome from "./Pages/EditorHome/EditorHome";
-import About from "./Pages/About/About";
+import Layout from "./Pages/Layout/Layout";
+import NotFound from "./Pages/NotFound/NotFound";
+
 import { EditorContextProvider } from "./store/editor-context";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,12 +11,9 @@ const App = () => {
   return (
     <EditorContextProvider>
       <Router>
-        <Header />
         <Routes>
-          <Route path="/" element={<EditorHome />}>
-            <Route index element={<EditorHome />} />
-            <Route path="/about" element={<About />} />
-          </Route>
+          <Route path="/" element={<Layout />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </EditorContextProvider>
