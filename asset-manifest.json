@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/github-readme-generator/static/css/main.fc235b3d.chunk.css",
-    "main.js": "/github-readme-generator/static/js/main.e9db364a.chunk.js",
-    "main.js.map": "/github-readme-generator/static/js/main.e9db364a.chunk.js.map",
-    "runtime-main.js": "/github-readme-generator/static/js/runtime-main.2d54737a.js",
-    "runtime-main.js.map": "/github-readme-generator/static/js/runtime-main.2d54737a.js.map",
-    "static/css/2.27ad98c3.chunk.css": "/github-readme-generator/static/css/2.27ad98c3.chunk.css",
-    "static/js/2.5088b6de.chunk.js": "/github-readme-generator/static/js/2.5088b6de.chunk.js",
-    "static/js/2.5088b6de.chunk.js.map": "/github-readme-generator/static/js/2.5088b6de.chunk.js.map",
+    "main.css": "/github-readme-generator/static/css/main.93311732.chunk.css",
+    "main.js": "/github-readme-generator/static/js/main.b633a425.chunk.js",
+    "main.js.map": "/github-readme-generator/static/js/main.b633a425.chunk.js.map",
+    "runtime-main.js": "/github-readme-generator/static/js/runtime-main.51a09980.js",
+    "runtime-main.js.map": "/github-readme-generator/static/js/runtime-main.51a09980.js.map",
+    "static/css/2.f26e749f.chunk.css": "/github-readme-generator/static/css/2.f26e749f.chunk.css",
+    "static/js/2.774aff0b.chunk.js": "/github-readme-generator/static/js/2.774aff0b.chunk.js",
+    "static/js/2.774aff0b.chunk.js.map": "/github-readme-generator/static/js/2.774aff0b.chunk.js.map",
     "index.html": "/github-readme-generator/index.html",
-    "static/css/2.27ad98c3.chunk.css.map": "/github-readme-generator/static/css/2.27ad98c3.chunk.css.map",
-    "static/css/main.fc235b3d.chunk.css.map": "/github-readme-generator/static/css/main.fc235b3d.chunk.css.map",
-    "static/js/2.5088b6de.chunk.js.LICENSE.txt": "/github-readme-generator/static/js/2.5088b6de.chunk.js.LICENSE.txt",
+    "static/css/2.f26e749f.chunk.css.map": "/github-readme-generator/static/css/2.f26e749f.chunk.css.map",
+    "static/css/main.93311732.chunk.css.map": "/github-readme-generator/static/css/main.93311732.chunk.css.map",
+    "static/js/2.774aff0b.chunk.js.LICENSE.txt": "/github-readme-generator/static/js/2.774aff0b.chunk.js.LICENSE.txt",
     "static/media/JS.svg": "/github-readme-generator/static/media/JS.45687a3d.svg",
     "static/media/amazonwebservices.svg": "/github-readme-generator/static/media/amazonwebservices.aa0c4194.svg",
     "static/media/angularjs.svg": "/github-readme-generator/static/media/angularjs.e384bddc.svg",
@@ -107,10 +107,10 @@
     "static/media/vuejs.svg": "/github-readme-generator/static/media/vuejs.7bc2f1c7.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2d54737a.js",
-    "static/css/2.27ad98c3.chunk.css",
-    "static/js/2.5088b6de.chunk.js",
-    "static/css/main.fc235b3d.chunk.css",
-    "static/js/main.e9db364a.chunk.js"
+    "static/js/runtime-main.51a09980.js",
+    "static/css/2.f26e749f.chunk.css",
+    "static/js/2.774aff0b.chunk.js",
+    "static/css/main.93311732.chunk.css",
+    "static/js/main.b633a425.chunk.js"
   ]
 }
